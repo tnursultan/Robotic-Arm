@@ -1,6 +1,6 @@
 # Robotic-Arm
 
-A robotic arm that can detect and choose faulty products on a conveyor belt.
+A robotic arm that can detect, choose, and dispose of faulty products on a conveyor belt.
 
 ### Modelling of the product:
 - Mechanical System - SolidWorks
