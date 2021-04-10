@@ -70,7 +70,7 @@ Motor3_M3=58.08;
 Motor4_Open=0;
 Motor4_Closed=90;
 %Motor Move Times:
-Move_Time = 0.007;
+Move_Time = 1;
 M1_Time = Move_Time;
 M1_Close = M1_Time + Move_Time;
 D1_Time = M1_Close + Move_Time;
