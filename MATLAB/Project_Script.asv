@@ -50,11 +50,11 @@ Motor1_D1=0;
 Motor2_D1=0;
 Motor3_D1=0;
 %Drop2:
-Motor1_D2=-(360-345.73)-M1;
+Motor1_D2=345.73-M1;
 Motor2_D2=-(46.53-M2);
 Motor3_D2=150.8-M3;
 %Drop3:
-Motor1_D3=-(360-330.2)-M1;
+Motor1_D3=330.2-M1;
 Motor2_D3=-(63.66-M2);
 Motor3_D3=183.46-M3;
 %Marshmallow1:
