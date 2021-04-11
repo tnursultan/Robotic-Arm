@@ -71,20 +71,21 @@ Motor2_M3=-(124.23-M2);
 Motor3_M3=183.92-M3;
 %Motor 4 (Gripper)
 Motor4_Open=0;
-Motor4_Closed=-90;
+Motor4_Closed=-60;
 %Motor Move Times:
-Move_Time = 2;
+Move_Time = 1.5;
 Gripper_Time = 0.05;
+Idle_Time = 1;
 M1_Time = Move_Time;                    %Time to finish going to M1
 M1_Close = M1_Time + Gripper_Time;      %Time to finish closing M1
 D1_Time = M1_Close + Move_Time;         %Time to finish going to D1
 D1_Open = D1_Time + Gripper_Time;       %Time to finish opening D1
-D2_Time1 = D1_Open + Move_Time;         %Time to finish going to D2
+D2_Time1 = D1_Open + Idle_Time;         %Time to finish going to D2
 M2_Time = D2_Time1 + Move_Time;         %Time to finish going to M2
 M2_Close = M2_Time + Gripper_Time;      %Time to finish closing M2
 D2_Time = M2_Close + Move_Time;         %Time to finish going to D2
 D2_Open = D2_Time + Gripper_Time;       %Time to finish opening D2
-D3_Time1 = D2_Open + Move_Time;         %Time to finish going to D3
+D3_Time1 = D2_Open + Idle_Time;         %Time to finish going to D3
 M3_Time = D3_Time1 + Move_Time;         %Time to finish going to M3
 M3_Close = M3_Time + Gripper_Time;      %Time to finish closing M3
 D3_Time = M3_Close + Move_Time;         %Time to finish going to D3
