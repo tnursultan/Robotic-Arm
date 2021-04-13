@@ -45,10 +45,13 @@ Kb4=Kb1;
 M1 = 37.43;
 M2 = 63.58;
 M3 = 116.15;
+%M1 = -(360-345.73);
+%M2 = -46.53;
+%M3 = 150.8;
 %Drop1:
-Motor1_D1=0;
-Motor2_D1=0;
-Motor3_D1=0;
+Motor1_D1=37.43-M1;
+Motor2_D1=63.58-M2;
+Motor3_D1=116.15-M3;
 %Drop2:
 Motor1_D2=-(360-345.73)-M1;
 Motor2_D2=-(46.53-M2);
@@ -71,24 +74,25 @@ Motor2_M3=-(124.23-M2);
 Motor3_M3=183.92-M3;
 %Motor 4 (Gripper)
 Motor4_Open=0;
-Motor4_Closed=-60;
+Motor4_Closed=-45;
 %Motor Move Times:
-Move_Time = 1.5;
+Move_Time = 1.3;
 Gripper_Time = 0.05;
-Idle_Time = 1;
+Idle_Time = 2;
+Drop_Time = 1;
 M1_Time = Move_Time;                    %Time to finish going to M1
 M1_Close = M1_Time + Gripper_Time;      %Time to finish closing M1
-D1_Time = M1_Close + Move_Time;         %Time to finish going to D1
+D1_Time = M1_Close + Drop_Time - 0.4;   %Time to finish going to D1
 D1_Open = D1_Time + Gripper_Time;       %Time to finish opening D1
-D2_Time1 = D1_Open + Idle_Time;         %Time to finish going to D2
-M2_Time = D2_Time1 + Move_Time;         %Time to finish going to M2
+D2_Time1 = D1_Open + Idle_Time - 0.5;   %Time to finish going to D2
+M2_Time = D2_Time1 + Move_Time - 0.2;   %Time to finish going to M2
 M2_Close = M2_Time + Gripper_Time;      %Time to finish closing M2
-D2_Time = M2_Close + Move_Time;         %Time to finish going to D2
+D2_Time = M2_Close + Drop_Time - 0.4;   %Time to finish going to D2
 D2_Open = D2_Time + Gripper_Time;       %Time to finish opening D2
-D3_Time1 = D2_Open + Idle_Time;         %Time to finish going to D3
-M3_Time = D3_Time1 + Move_Time;         %Time to finish going to M3
+D3_Time1 = D2_Open + Idle_Time - 0.7;   %Time to finish going to D3
+M3_Time = D3_Time1 + Move_Time - 0.3;   %Time to finish going to M3
 M3_Close = M3_Time + Gripper_Time;      %Time to finish closing M3
-D3_Time = M3_Close + Move_Time;         %Time to finish going to D3
+D3_Time = M3_Close + Drop_Time - 0.3;   %Time to finish going to D3
 %ISR Rate
 Sample_Time = 10000;
 %Optical Encoder Resolution
@@ -105,7 +109,7 @@ z1=3.056+17.33*i;
 z2=3.056-17.33*i;
 control=tf([1 0 309.76],[1 5000 0]);
 sys1=sys*control
-rlocus(sys1)
+%rlocus(sys1)
 %margin(sys1)
 Ku = 2162;
 K = Ku*10/100;
